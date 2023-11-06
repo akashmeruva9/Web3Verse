@@ -45,7 +45,7 @@ class GPSService: Service()  {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         //do heavy work on a background thread
         createNotificationChannel()
-        val notificationIntent = Intent(this, MainActivity::class.java)
+                val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setOngoing(true)
